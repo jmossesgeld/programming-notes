@@ -1,11 +1,11 @@
 # Without using redux toolkit
 ## 1. Install dependencies 
-```
+```jsx
 npm install react react-dom react-scripts redux react-redux
 ```
 ## 2. Create store
 
-```
+```jsx
 import { createStore } from "redux";
 
 const initialState = {value: 0}
@@ -22,7 +22,7 @@ export default createStore(reducer);
 
 ## 3. Initialize and wrap Provider
 
-```
+```jsx
 import { Provider } from "react-redux";
 import store from "./store/index";
 
@@ -36,7 +36,7 @@ ReactDOM.render(
 
 ## 4. Get values from store using useSelector
 
-```
+```jsx
 import { useSelector } from "react-redux";
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
 ```
 
 ## 5. Modify values in store using useDispatch
-```
+```jsx
 import { useDispatch } from 'react-redux';
 
 function App() {
@@ -70,7 +70,7 @@ npm install react react-dom react-scripts redux react-redux @reduxjs/toolkit
 
 ## 2. Create slices on separate files
 - First example slice
-  ```
+  ```jsx
   import { createSlice } from "@reduxjs/toolkit";
 
   const initialState = { value: 0 }
@@ -92,7 +92,7 @@ npm install react react-dom react-scripts redux react-redux @reduxjs/toolkit
   export default amountSlice.reducer
   ```
 - Second example slice
-  ```
+  ```jsx
   import { createSlice } from "@reduxjs/toolkit";
 
   const initialState = { letter: 'a' }
@@ -112,7 +112,7 @@ npm install react react-dom react-scripts redux react-redux @reduxjs/toolkit
   ```
 
 ## 3. Create store, import all slices
-```
+```jsx
 import {configureStore} from @reduxjs/toolkit;
 import amountReducer from './amount';
 import letterReducer from './letter';
@@ -127,7 +127,7 @@ export default configureStore({
 
 ## 4. Initialize and wrap Provider
 >Same method without using redux toolkit
-```
+```jsx
 import { Provider } from "react-redux";
 import store from "./store/index";
 
@@ -140,7 +140,7 @@ ReactDOM.render(
 ```
 
 ## 5. Get values from store using useSelector
-```
+```jsx
 import { useSelector } from "react-redux";
 
 function App() {
@@ -150,7 +150,7 @@ function App() {
 
 ```
 ## 6. Modify values in store using useDispatch AND importing slice actions
-```
+```jsx
 import { useDispatch } from 'react-redux';
 import { amountActions } from "../../store/amount";
 import { letterActions } from "../../store/letter";
